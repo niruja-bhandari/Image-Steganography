@@ -448,4 +448,4 @@ Developed as an Image Steganography project using Flask, AES encryption, LSB emb
 ![Decode](screenshots/decode.png)
 
 ### Decrypted Message
-![Decoded Image](screenshots/decoded-image.png)
+![Decoded Image](screenshots/decoded-message.png)
