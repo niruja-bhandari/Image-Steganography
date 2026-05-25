@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="welcome-card shadow">
+            <div class="welcome-header bg-teal text-white">
+                <h3 class="mb-0">Image Steganography</h3>
+            </div>
+            <div class="card-body">
+                <div style="height: 20px;"></div> 
+                <h4 class="text-center">Hide Your Secrets in Plain Sight!</h4>
+                <div style="height: 20px;"></div> 
+                <p class="text-justify">
+                    Image steganography is the practice of hiding secret information within an image in such a way that the presence of the hidden data is not noticeable. The goal is to conceal the existence of the message. Through this site, you will be able to perform it without any difficulties.
+                </p>
+                <p class="text-justify">
+                    Easily conceal text messages inside images using our steganography tool. Your data stays hidden, secure, and invisible to the naked eye. Upload an image, add your secret message, and download the encoded image—it's that simple!
+                </p>
+                <div style="height: 20px;"></div> 
+                <div class="text-center">
+                    <ul class="list-unstyled text-center">
+                        <li><i class="fas fa-lock"></i> <strong>Fast and Secure</strong></li>
+                        <li><i class="fas fa-eye-slash"></i> <strong>No Visual Changes to Images</strong></li>
+                        <li><i class="fas fa-smile"></i> <strong>Free & Easy to Use</strong></li>
+                    </ul>
+                </div>
+                <div class="text-center">
+                    <a href="{{ url_for('login') }}" class="start-button">Start Now!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

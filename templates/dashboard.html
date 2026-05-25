@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8"> 
+        <div class="card shadow">
+            <div class="card-header bg-teal text-white">
+                <h3 class="mb-0">Image Steganography Tool</h3>
+            </div>
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data" action="{{ url_for('process') }}">
+
+                    <div class="form-group">
+                        <label for="operationSelect"><i class="fas fa-cog"></i> Operation</label>
+                        <select name="operation" class="form-control" id="operationSelect">
+                            <option value="encrypt">Encrypt Message</option>
+                            <option value="decrypt">Decrypt Message</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="secretKey"><i class="fas fa-lock"></i> Secret Key</label>
+                        <input type="password" name="secret_key" class="form-control" id="secretKey" placeholder="Enter Secret Key" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="imageUpload"><i class="fas fa-image"></i> Image File</label>
+                        <div class="custom-file">
+                            <input type="file" name="image" class="custom-file-input" id="imageUpload"
+                                accept=".png,.jpg,.jpeg">
+                            <label class="custom-file-label" for="imageUpload">Choose file</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="imagePreviewContainer" style="display: none;">
+                        <label><i class="fas fa-eye"></i> Image Preview:</label>
+                        <img id="imagePreview" src="#" alt="Image Preview" style="width: 150px; height: 150px; object-fit: contain;">
+                    </div>
+
+                    <div class="form-group" id="messageField">
+                        <label for="message"><i class="fas fa-envelope"></i> Message to Encrypt</label>
+                        <textarea name="message" class="form-control" id="message" rows="3" placeholder="Enter Message"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-lock"></i> Process</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const operationSelect = document.getElementById('operationSelect');
+        const messageField = document.getElementById('messageField');
+        const form = document.querySelector('form'); // Get the form
+        const imageUpload = document.getElementById('imageUpload');
+        const imagePreview = document.getElementById('imagePreview');
+        const imagePreviewContainer = document.getElementById('imagePreviewContainer');
+        const customFileLabel = document.querySelector('.custom-file-label'); 
+
+        operationSelect.addEventListener('change', (e) => {
+            messageField.style.display = e.target.value === 'encrypt' ? 'block' : 'none';
+        });
+
+        messageField.style.display = operationSelect.value === 'encrypt' ? 'block' : 'none';
+
+        imageUpload.addEventListener('change', function (e) {
+            const file = e.target.files[0];
+            customFileLabel.textContent = file.name; 
+
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                imagePreview.src = e.target.result;
+                imagePreviewContainer.style.display = 'block'; 
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                imagePreview.src = "#";  
+                imagePreviewContainer.style.display = 'none';
+            }
+        });
+
+        
+        form.addEventListener('submit', function (e) {
+            setTimeout(() => {
+                form.reset();
+                customFileLabel.textContent = 'Choose file';
+                imagePreview.src = "#";  
+                imagePreviewContainer.style.display = 'none'; 
+            }, 1000); 
+        });
+    });
+</script>
+{% endblock %}

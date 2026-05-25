@@ -1,0 +1,136 @@
+
+body {
+    background-color: #f8f9fa; 
+    color: #343a40; 
+    font-family: 'Open Sans', sans-serif; 
+    line-height: 1.6;
+}
+
+
+.navbar {
+    background-color: #0097a7; 
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); 
+}
+
+.navbar-brand {
+    color: #ffffff; 
+    font-weight: 600; 
+}
+
+.nav-link {
+    color: #ffffff !important; 
+    font-weight: 500; 
+}
+
+.nav-link:hover {
+    color: #ffffff !important; 
+    background-color: #00698f; 
+}
+
+
+.card {
+    background-color: #fff; 
+    border: 1px solid rgba(0, 0, 0, 0.125); 
+    border-radius: 0.5rem; 
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05); 
+}
+
+.card-header {
+    background-color: #0097a7; 
+    color: #ffffff; 
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.form-control {
+    border-radius: 0.3rem;
+    background-color: #ffffff; 
+    color: #495057; 
+    border: 1px solid #ced4da; 
+}
+
+.form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.btn-primary {
+    background-color: #0097a7; 
+    border-color: #0097a7;
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background-color: #00698f; 
+    border-color: #00698f;
+    transform: scale(1.05); 
+    transition: transform 0.2s ease-in-out; 
+}
+
+
+
+h1, h2, h3, h4, h5, h6 {
+    color: #212529;
+    font-weight: 600;
+}
+
+
+::placeholder {
+    color: #6c757d !important; 
+    opacity: 1; 
+}
+
+:-ms-input-placeholder {
+    color: #6c757d !important;
+}
+
+::-ms-input-placeholder {
+    color: #6c757d !important;
+}
+
+
+.formal-text {
+    font-family: 'Open Sans', sans-serif;
+    color: #343a40; 
+}
+
+
+h3 {
+    color: #343a40; 
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2rem; 
+    font-weight: 500; 
+}
+
+
+.welcome-card {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+}
+
+.welcome-header {
+    background-color: #0097a7; 
+    color: #ffffff;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.start-button {
+    background-color: #0097a7; 
+    border-color: #0097a7;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.3rem;
+    color: #ffffff; 
+}
+
+.start-button:hover {
+    background-color: #00698f; 
+    border-color: #00698f;
+    transform: scale(1.05); 
+    transition: transform 0.2s ease-in-out; 
+}
